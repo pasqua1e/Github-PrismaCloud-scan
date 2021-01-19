@@ -3,7 +3,7 @@ resource "aws_instance" "example" {
   instance_type = "t2.micro"
 }
 resource "aws_iam_account_password_policy" "strict" {
-  minimum_password_length        = 8
+  minimum_password_length        = 15
   require_lowercase_characters   = true
   require_numbers                = true
   require_uppercase_characters   = true

@@ -6,7 +6,7 @@ template_type: TF
 
 # For Terraform, it is recommended to provide one of the following values: 0.11, 0.12 or 0.13.
 # For CFT and K8s, this can be omitted.
-template_version: 0.13
+template_version: 0.12
 # For your template_type, fill in the details where applicable.
 # variables: Specify any environment variables(TF) or parameters(CFT) as key:value pairs under this attribute.
 # variable_files: Specify all the custom variable_files under here. It is an array of strings.

@@ -1,11 +1,28 @@
 provider "aws" {
     region = "eu-west-2"
 }
-module "web_server_sg" {
-  source = "terraform-aws-modules/security-group/aws//modules/http-80"
-  name        = "web-server"
-  description = "Security group for web-server with HTTP ports open within VPC"
-  vpc_id      = "vpc-12345670"
 
-  ingress_cidr_blocks = ["0.0.0.0/0"]
+resource "aws_security_group" "allow_tls" {
+  name        = "allow_all"
+  description = "Allow all inbound traffic"
+  vpc_id      = "vpc-12345670"
+    
+  ingress {
+    description = "all traffic from VPC"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "allow_all"
+  }
 }

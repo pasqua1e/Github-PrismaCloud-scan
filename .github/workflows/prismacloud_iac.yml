@@ -15,7 +15,7 @@ jobs:
           prisma_api_url: 'https://app.prismacloud.io'
           access_key: ${{ secrets.PRISMA_CLOUD_ACCESS_KEY }}
           secret_key: ${{ secrets.PRISMA_CLOUD_SECRET_KEY }}
-          asset_name: 'my-asset-name'
+          asset_name: 'pasq-asset-name'
           template_type: 'TF'
           template_version: '0.13'
       - name: Upload scan result artifact

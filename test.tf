@@ -5,7 +5,7 @@ provider "aws" {
 resource "aws_security_group" "allow_tls" {
   name        = "allow_all"
   description = "Allow all inbound traffic"
-  vpc_id      = "vpc-12345679"
+  vpc_id      = "vpc-12345678"
     
   ingress {
     description = "all traffic from VPC"
